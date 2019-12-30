@@ -298,7 +298,7 @@
                                 <h4 class="section-title mt-0">BANCI PENDUDUK DAN PERUMAHAN MALAYSIA 2020</h4>
 			
                             <!-- countdown -->
-  <p id="demo"></p>
+  <h1 id="countdown"></h1>
 
 <script>
 // Set the date we're counting down to
@@ -319,8 +319,8 @@ var x = setInterval(function() {
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
-  // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML = days + "days " + hours + "h "
+  // Output the result in an element with id="countdown"
+  document.getElementById("countdown").innerHTML = days + "days " + hours + "h "
   + minutes + "m " + seconds + "s ";
     
   // If the count down is over, write some text 
