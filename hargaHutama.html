@@ -32,46 +32,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {box-sizing: border-box}
 
-/* Set height of body and the document to 100% */
-body, html {
-  height: 80%;
-  margin: 0;
-  font-family: Arial;
-}
-
-/* Style tab links */
-.tablink {
-  background-color: #555;
-  color: white;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  font-size: 17px;
-  width: 25%;
-}
-
-.tablink:hover {
-  background-color: #777;
-}
-
-/* Style the tab content (and add height:100% for full page content) */
-.tabcontent {
-  color: black;
-  display: none;
-  padding: 100px 20px;
-  height: 80%;
-}
-
-#Home {background-color: white;}
-#News {background-color: white;}
-#Contact {background-color: white;}
-#About {background-color: white;}
-</style>
 </head>
 <body>
 <center> <h2>Harga Purata Item/Makanan Terpilih</h2>
@@ -83,53 +44,9 @@ body, html {
 	<br>
 	<center><iframe title="Senarai Harga Purata Item Terpilih di Malaysia" aria-label="Bars (old)" src="//datawrapper.dwcdn.net/UOire/1/" scrolling="no" frameborder="0" style="border: none;" width="95%" height="349"></iframe></center>
 	<br>
-<button class="tablink" onclick="openPage('Home', this, 'green')">Sayur-sayuran</button>
-<button class="tablink" onclick="openPage('News', this, 'orange')" id="defaultOpen">Buah-buahan</button>
-<button class="tablink" onclick="openPage('Contact', this, 'blue')">Makanan Laut</button>
-<button class="tablink" onclick="openPage('About', this, 'red')">Ayam & Daging</button>
-
-<div id="Home" class="tabcontent">
-  <h3>Sayur-sayuran</h3>
-  <br>
-  <iframe height="1500px" width="100%" style="border:none;" src="https://view-awesome-table.com/-M35SQCdM7jfTtRn8U_n/view?filterH=Sayur-sayuran"></iframe>
-</div>
-
-<div id="News" class="tabcontent">
-  <h3>Buah-buahan</h3>
-  <br>
-  <iframe height="1500px" width="100%" style="border:none;" src="https://view-awesome-table.com/-M35SQCdM7jfTtRn8U_n/view?filterH=Buah-buahan"></iframe>
-</div>
-
-<div id="Contact" class="tabcontent">
-  <h3>Makanan Laut</h3>
-  <br>
-  <iframe height="1500px" width="100%" style="border:none;" src="https://view-awesome-table.com/-M35SQCdM7jfTtRn8U_n/view?filterH=Udang_Sotong_dan_Ketam"></iframe>
-</div>
-
-<div id="About" class="tabcontent">
-  <h3>Daging</h3>
-  <br>
-  <iframe height="1500px" width="100%" style="border:none;" src="https://view-awesome-table.com/-M35SQCdM7jfTtRn8U_n/view?filterH=Ikan_Ayam_dan_Daging"></iframe>
-</div>
-
-<script>
-function openPage(pageName,elmnt,color) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].style.backgroundColor = "";
-  }
-  document.getElementById(pageName).style.display = "block";
-  elmnt.style.backgroundColor = color;
-}
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-</script>  
+<center>
+  <iframe height="1500px" width="95%" style="border:none;" src="https://view-awesome-table.com/-M35SQCdM7jfTtRn8U_n/view"></iframe>
+</center> 
   
 </body>
 </html>
