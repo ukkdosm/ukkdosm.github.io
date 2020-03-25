@@ -38,8 +38,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 </script>
 	  <center>  
 	<div>
-	  <iframe class="iframe_fullHeight" src="https://datastudio.google.com/embed/reporting/cfca4946-cfc8-4fb4-804f-bb58aa6c35ca/page/1M"></iframe></center>
-		  </div>
+	  <iframe width="95%" height="1800" src="https://datastudio.google.com/embed/reporting/cfca4946-cfc8-4fb4-804f-bb58aa6c35ca/page/1M" frameborder="0" style="border:0" allowfullscreen></iframe></div>
 		  <br>
 <div class="container-fluid">
   <div class="row">
@@ -145,31 +144,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
 <script type="application/javascript" src="/script/jquery-iframe-auto-height.js">
 </script>
-
-<script type="application/javascript"> 
-  jQuery('iframe').iframeAutoHeight();
-  $(window).load(
-      function() {
-          jQuery('iframe').iframeAutoHeight();  
-      }
-  );
-
-  // for when content is not html e.g. a PDF
-  function setIframeHeight() {
-      $('.iframe_fullHeight').each(
-          function (i, item) {
-              item.height = $(document).height();
-          }
-      );
-  };
-
-  $(document).ready( function () {
-      setIframeHeight();
-  });
-  $(window).resize( function () {
-      setIframeHeight();
-  });
-</script> 
 	
 </body>
 </html>
