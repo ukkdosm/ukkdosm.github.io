@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>UKK DOSM | CoViD-19 Malaysia by States</title>
+	<meta name="google-site-verification" content="_ZFlJ_IYYRz4EYs7ZjIOuVs6RcAr05AZ_wwPbMgeyf4" />  
+	<meta name="description" content="Sharing Section, blog, ukk dosm">
+	<meta property="og:title" content="UKK DOSM" />
+	<meta property="og:url" content="https://ukkdosm.github.io/" />
+	<meta property="og:description" content="Blog UKK DOSM Sharing Section">
+	<meta property="og:image" content="../dist/images/logoUKK-small.jpg" class="lazyload" >
+		
+		<link rel="shortcut icon" type="image/x-icon" href="https://ukkdosm.github.io/blog/assets/images/favicon.ico">
+		<link href="https://fonts.googleapis.com/css?family=Heebo:400,500,700|Fira+Sans:600" rel="stylesheet">
+		<link rel="stylesheet" href="dist/css/style.css">
+    
+	<script src="https://unpkg.com/animejs@2.2.0/anime.min.js"></script>
+	<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+	<script src="lazysizes.min.js" async></script>
+	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script src="https://code.highcharts.com/maps/highmaps.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/mapdata/countries/my/my-all.js"></script>
+
+<style>
+    #container {
+        height: 500px;
+        min-width: 310px; 
+		max-width: 800px; 
+        margin: 0 auto;
+    }
+    .loading {
+        margin-top: 10em;
+        text-align: center;
+        color: gray;
+    }
+ </style>
+</head>
+<body>
+<div id="container"></div>
+</body>
+<script>
+
+    // Prepare demo data
+    // Data is joined to map using value of 'hc-key' property by default.
+    // See API docs for 'joinBy' for more info on linking data and map.
+    var data = [
+    ['my-sa', 1],
+    ['my-sk', 5],
+    ['my-la', 0],
+    ['my-pg', 1],
+    ['my-kh', 1],
+    ['my-sl', 2],
+    ['my-ph', 0],
+    ['my-kl', 3],
+    ['my-pj', 0],
+    ['my-pl', 1],
+    ['my-jh', 7],
+    ['my-pk', 3],
+    ['my-kn', 2],
+    ['my-me', 1],
+    ['my-ns', 0],
+    ['my-te', 0]
+];
+
+    // Create the chart
+    Highcharts.mapChart('container', {
+      chart: {
+          map: 'countries/my/my-all'
+      },
+
+      title: {
+          text: 'No. of Death Patients by State'
+      },
+
+      subtitle: {
+          text: 'updated on 25 Mac 2020'
+      },
+
+      mapNavigation: {
+          enabled: true,
+          buttonOptions: {
+              verticalAlign: 'bottom'
+          }
+      },
+	  
+      colorAxis: {
+          min: 0
+      },
+
+      series: [{
+          data: data,
+          name: 'Malaysia',
+          states: {
+              hover: {
+                  color: '#BADA55'
+              }
+          },
+          dataLabels: {
+              enabled: true,
+              format: '{point.name}'
+          }
+      }]
+    });
+
+    </script>
+</html> 
