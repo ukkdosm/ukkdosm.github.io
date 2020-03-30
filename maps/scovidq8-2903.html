@@ -27,7 +27,7 @@
 #container {
   height: 500px;
   min-width: 310px;
-  max-width: 600px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -83,7 +83,7 @@ Highcharts.data({
         $div = $('<div></div>')
         .dialog({
           title: this.name,
-          width: 350,
+          width: 90%,
           height: 300
         });
 
@@ -91,7 +91,7 @@ Highcharts.data({
         chart: {
           renderTo: $div[0],
           type: 'pie',
-          width: 320,
+          width: 80%,
           height: 240
         },
         title: {
@@ -127,7 +127,7 @@ Highcharts.data({
           type: 'map',
           map: mapData,
           renderTo: 'container',
-          borderWidth: 1
+          borderWidth: 0
         },
 
         title: {
