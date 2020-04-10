@@ -179,7 +179,12 @@ body, html {
             <iframe title="CoVID-19 in Malaysia by State" aria-label="Interactive line chart" src="//datawrapper.dwcdn.net/AT19Z/19/" scrolling="no" frameborder="0" style="border: none;" width="95%" height="600"></iframe>
             <br>
             <iframe width="100%" height="600" src="https://ukkdosm.github.io/maps/HC-malaysia.html" frameborder="0" style="border:0" allowfullscreen></iframe>
-</p> 
+	    <br>
+	  <!-- JS file to enable the JavaScript API. You can point at the version on public.tableau.com, online.tableau.com, or your on-prem Server -->
+		<script src="https://www.example.com/javascripts/api/tableau-2.js"></script>
+	<!-- Empty div where the viz will be placed -->
+<div id="tableauViz"></div>
+	</p> 
 </div>
 
 <div id="Contact" class="tabcontent">
@@ -239,6 +244,20 @@ function closeNav() {
   document.getElementById("main").style.marginLeft= "0";
 }
 
+	function initializeViz() {
+  // JS object that points at empty div in the html
+  var placeholderDiv = document.getElementById("tableauViz");
+  // URL of the viz to be embedded
+  var url = "https://public.tableau.com/profile/najmi.ariffin#!/vizhome/COVID-19Performance/byCases";
+  // An object that contains options specifying how to embed the viz
+  var options = {
+    width: '600px',
+    height: '600px',
+    hideTabs: true,
+    hideToolbar: true,
+  };
+  viz = new tableau.Viz(placeholderDiv, url, options);
+}
 </script>
    
 </body>
