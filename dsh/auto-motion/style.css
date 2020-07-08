@@ -1,0 +1,35 @@
+body {
+  background-color: #FDFCE5;
+  text-align: center;
+}
+
+#A2 {
+  visibility: hidden;
+}
+
+svg {
+  position: relative;
+  top: 50%;
+}
+
+.no-gif {
+  font-family: 'Nunito', sans-serif;
+  font-size: 52px;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 32px;
+  color: #36b3d8;
+  margin-top: 64px;
+}
+
+.no-gif {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  margin-top: 0px;
+}
+
+.no-gif a {
+  color: #36b3d8;
+}
