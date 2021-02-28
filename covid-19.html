@@ -33,7 +33,14 @@
   gtag('config', 'UA-155273911-1');
 </script>
 <style>
-
+.box{
+    float:left;
+    margin-right:20px;
+}
+.clear{
+    clear:both;
+}
+	
 * {box-sizing: border-box}
 
 /* Set height of body and the document to 100% */
@@ -175,13 +182,17 @@ body, html {
 </div>
 
 <div id="News" class="tabcontent">
-  <center>
 	  <iframe id="preview-frame" src="https://covid-msia2021.netlify.app/covid_pop100k" scrolling='no' frameborder="0" noresize="noresize" style='width:100%;height:600px;'>
 	  <iframe id="preview-frame" src='https://flo.uri.sh/visualisation/1641110/embed' scrolling='no' frameborder="0" noresize="noresize" style='width:100%;height:600px;'></iframe>
-	    <iframe id="preview-frame" src='https://flo.uri.sh/visualisation/1985060/embed' scrolling='no' frameborder="0" noresize="noresize" style='width:100%;height:600px;'></iframe>
-		  <iframe id="preview-frame" src='https://flo.uri.sh/visualisation/5014644/embed' scrolling='no' frameborder="0" noresize="noresize" style='width:100%;height:800px;'></iframe></center>
-	  <iframe id="preview-frame" src='https://flo.uri.sh/visualisation/5014589/embed' scrolling='no' frameborder="0" noresize="noresize" style='width:100%;height:800px;'></iframe></center>
+	    <iframe id="preview-frame" src='https://flo.uri.sh/visualisation/1985060/embed' scrolling='no' frameborder="0" noresize="noresize" style='width:100%;height:600px;'></iframe> 
 	
+	<div class="box">
+  <iframe id="preview-frame" src='https://flo.uri.sh/visualisation/5014644/embed' scrolling='no' frameborder="0" noresize="noresize" style='width:100%;height:800px;'></iframe>
+</div>
+
+<div class="box">
+  <iframe id="preview-frame" src='https://flo.uri.sh/visualisation/5014589/embed' scrolling='no' frameborder="0" noresize="noresize" style='width:100%;height:800px;'></iframe>
+</div></center>
 </div>
 
 <div id="Contact" class="tabcontent">
