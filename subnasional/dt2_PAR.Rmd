@@ -1,0 +1,50 @@
+---
+title: "dt2_PAR"
+author: "Najmi Ariffin"
+date: "2/22/2022"
+output: html_document
+---
+
+## Data Exploration by PARLIMEN
+
+You can filter Kod PAR, Nama PARLIMEN:
+
+```{r setup, echo=FALSE}
+
+library(DT)
+data <- read.csv("databasebyPAR.csv",fileEncoding = 'UTF-8-BOM')
+
+ DT:::datatable(
+    data,
+    extensions = list("Buttons" = NULL,
+                      "FixedColumns" = list(leftColumns=1)),
+    class = 'cell-border stripe',
+    editable = 'cell',
+    options = list(
+                dom = 'BlfRrtip',
+                autoWidth=TRUE,
+                scrollX = TRUE,
+                scrollCollapse = TRUE,
+                lengthMenu = list(c(10, 50, -1), c('10', '50', 'All')),
+                ColReorder = TRUE,
+                buttons =
+                  list(
+                    'copy',
+                    'print',
+                    list(
+                      extend = 'collection',
+                      buttons = c('copy', 'csv', 'excel', 'pdf', 'print'),
+                      text = 'Download'
+                    ),
+                    I('colvis')
+                  )
+              )
+    )
+            
+                           
+
+
+
+
+```
+ 
