@@ -1,0 +1,179 @@
+---
+title: "Quick Exploration : SubNational 2020"
+output: 
+  flexdashboard::flex_dashboard:
+    
+    #css: style.css
+    social: menu
+    source_code: embed
+    orientation: columns
+    vertical_layout: fill
+    #theme: lumen
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+#------------------ Packages ------------------
+library(flexdashboard)
+library(DT)
+library(knitr)
+library(rmarkdown)
+
+setwd("C:/Users/najmi.ariffin/Documents/R/datatable")
+
+#render Rmd to html
+render("dt3_DUN_PARLIMEN.Rmd", "all")
+
+### Pulling most recent data from Github
+dataPAR <- read.csv("databasebyPAR.csv",fileEncoding = 'UTF-8-BOM')
+dataDUN <- read.csv("databasebyDUN.csv",fileEncoding = 'UTF-8-BOM')
+```
+
+PARLIMEN {data-orientation=columns}
+=======================================================================
+
+Column 
+-----------------------------------------------------------------------
+Data Exploration by PARLIMEN Dataset, you can filter data by Kod PARLIMEN, Nama PARLIMEN:
+
+### PARLIMEN Dataset {data-height="100%"}
+
+```{r}
+#DT::renderDataTable({ 
+  ####################### USE THE PARAM fillContainer = TRUE ######3
+   DT:::datatable(dataPAR,
+                  fillContainer = TRUE,
+                  extensions = list("Buttons" = NULL,"FixedColumns" = list(leftColumns=1)),    
+                  class = 'cell-border stripe',
+                  options = list(
+                              dom = 'BlfRrtip',
+                              autoWidth=TRUE,
+                              scrollX = TRUE,
+                              buttons =
+                                list(
+                                  'copy',
+                                  'print',
+                                  list(
+                                    extend = 'collection',
+                                    buttons = c('copy', 'csv', 'excel', 'pdf', 'print'),
+                                    text = 'Download'
+                    ),
+                    I('colvis')
+                  ))
+                  )
+#})
+```
+
+DUN {data-orientation=columns}
+=======================================================================
+
+Column 
+-----------------------------------------------------------------------
+Data Exploration by DUN Dataset, you can filter data by Kod DUN, Nama DUN:
+
+### DUN Dataset {data-height="100%"}
+
+```{r}
+#DT::renderDataTable({ 
+  ####################### USE THE PARAM fillContainer = TRUE ######3
+   DT:::datatable(dataDUN,
+                  fillContainer = TRUE,
+                  extensions = list("Buttons" = NULL,"FixedColumns" = list(leftColumns=1)),    
+                  class = 'cell-border stripe',
+                  options = list(
+                              dom = 'BlfRrtip',
+                              autoWidth=TRUE,
+                              scrollX = TRUE,
+                              buttons =
+                                list(
+                                  'copy',
+                                  'print',
+                                  list(
+                                    extend = 'collection',
+                                    buttons = c('copy', 'csv', 'excel', 'pdf', 'print'),
+                                    text = 'Download'
+                    ),
+                    I('colvis')
+                  ))
+                  )
+#})
+```
+
+Nota Teknikal
+=======================================================================
+
+**MAKLUMAT ASAS**
+
+**Luas Kawasan**: Luas kawasan adalah berdasarkan persempadanan pilihan raya oleh Suruhanjaya Pilihan Raya Malaysia (SPR) tahun 2018. 
+<br/><br/>
+**PENDUDUK**
+
+**Purata Kadar Pertumbuhan Penduduk Tahunan**: Merujuk kepada perubahan penduduk sejajar dengan perubahan masa dan boleh dikira sebagai perubahan bilangan individu dalam penduduk menggunakan “per unit masa” sebagai pengukuran. 
+
+
+**Nisbah Jantina**: Merujuk kepada bilangan lelaki bagi setiap 100 perempuan.
+
+
+**Kepadatan Penduduk**: Kepadatan penduduk bagi satu kilometer persegi ialah nisbah penduduk sesebuah kawasan geografi yang tertentu pada keluasan kilometer persegi untuk kawasan yang sama.
+
+
+**Kelahiran dan Kematian**: Perangkaan kelahiran dan kematian dalam penerbitan ini adalah berasaskan tempat kediaman biasa ibu atau si mati.
+
+
+**Kelahiran Hidup**: Kelahiran hidup merujuk kepada kelahiran bernyawa semasa dilahirkan walaupun hanya seketika.
+
+
+**Isi Rumah**: Isi rumah ditakrifkan sebagai seorang atau sekumpulan orang yang bersaudara atau orang yang tidak bersaudara yang biasanya tinggal bersama dan membuat peruntukan yang sama untuk makanan dan keperluan hidup yang lain.
+
+
+**Tempat Kediaman**: Tempat kediaman adalah struktur yang dibina berasingan dan bebas yang lazimnya digunakan untuk tempat tinggal. 
+
+
+**Purata Saiz Isi Rumah**: Purata saiz isi rumah ialah bilangan orang bagi setiap isi rumah 
+<br/><br/>
+**GUNA TENAGA**
+
+**Tenaga Buruh**: Tenaga buruh merujuk kepada penduduk dalam umur bekerja 15 hingga 64 tahun sama ada bekerja atau menganggur.
+
+
+**Bekerja**: Semua orang yang bekerja sekurang-kurangnya sejam semasa minggu rujukan untuk mendapatkan upah, keuntungan atau keuntungan keluarga sama ada sebagai majikan, pekerja, bekerja sendiri atau pekerja keluarga tanpa gaji. 
+
+
+**Penganggur**: Penganggur adalah mereka yang tidak bekerja semasa minggu rujukan dan dikelaskan kepada dua kumpulan iaitu penganggur aktif dan penganggur tidak aktif.
+<br/><br/>
+**PENDAPATAN ISI RUMAH**
+
+**Perbelanjaan Penggunaan Isi Rumah**: Perbelanjaan penggunaan isi rumah adalah nilai daripada barangan dan perkhidmatan pengguna yang diperoleh, diguna atau dibayar oleh isi rumah melalui pembelian langsung, hasil pengeluaran sendiri, melalui pertukaran barangan dan perkhidmatan atau pendapatan dalam bentuk mata benda untuk memenuhi keperluan dan kehendak ahli isi rumah.
+
+
+**Kemiskinan Mutlak**: Kemiskinan mutlak adalah keadaan di mana pendapatan isi rumah tidak mencukupi untuk menampung keperluan hidup asas iaitu makanan, perlindungan dan pakaian. Kemiskinan mutlak diukur dengan mendefinisikan garis kemiskinan.
+
+
+**Pekali Gini**: Pekali Gini (G) ialah ukuran pemusatan pendapatan berdasarkan Keluk Lorenz. Keluk ini dihasilkan dengan memplot peratus isi rumah kumulatif pada paksi X dan peratus jumlah pendapatan kumulatif yang diterima oleh isi rumah pada paksi Y. Nilai pekali Gini berada antara 0 dan 1, di mana 0 menunjukkan agihan pendapatan yang saksama, manakala nilai 1 menunjukkan agihan pendapatan yang paling tidak saksama. 
+<br/><br/>
+**PENDIDIKAN**
+
+**Sekolah**: Sekolah terbahagi kepada dua kategori iaitu sekolah rendah dan menengah, meliputi sekolah kerajaan dan bantuan kerajaan serta sekolah swasta. Sekolah kerajaan dan bantuan kerajaan di bawah seliaan Kementerian Pendidikan Malaysia (KPM) meliputi sekolah kebangsaan, sekolah jenis kebangsaan (Tamil dan Cina), sekolah agama bantuan kerajaan (SABK) serta sekolah khas. Manakala sekolah agensi kerajaan selain KPM merujuk kepada Maktab Rendah Sains MARA (MRSM) dan sekolah tentera. Selain itu, terdapat sekolah di bawah seliaan Kerajaan Negeri iaitu sekolah agama negeri dan sekolah agama rakyat. 
+
+
+**Guru**: Bilangan guru termasuk guru terlatih dan tidak terlatih serta guru tetap dan sementara. Guru dibahagikan kepada guru sekolah rendah dan menengah.
+
+
+**Murid**: Murid sekolah terbahagi kepada empat peringkat iaitu prasekolah, rendah, menengah dan lepasan menengah. Pelajaran peringkat rendah biasanya bermula pada peringkat umur sekurang-kurangnya tujuh tahun dan mengambil masa selama enam tahun bagi menamatkan pelajaran pada peringkat tersebut. Pada peringkat pelajaran menengah, kumpulan umur adalah 13 hingga 17 tahun. Manakala murid tingkatan enam termasuk dalam peringkat lepasan menengah.<br/><br/>
+**KESIHATAN**
+
+**Hospital Kerajaan**: Hospital Kerajaan ialah semua hospital yang dianggotai oleh sekurang kurangnya seorang doktor dan menyediakan wad bagi menempatkan pesakit, memberi rawatan perubatan dan penjagaan yang aktif.  Pertubuhan yang hanya memberi rawatan penjagaan tidak diambil kira.
+<br/><br/>
+**INTERNET DAN MEDIA SOSIAL**
+
+**Pusat Internet Desa (PID)**: Pusat Internet Desa (PID) merupakan satu program telecentre yang mula beroperasi pada tahun 2003 dan menyediakan perkhidmatan mengakses komputer dan internet terutamanya di kawasan luar bandar. Program ini bertujuan untuk merapatkan jurang digital di antara kawasan bandar dan luar bandar bagi memudahkan capaian maklumat tanpa sempadan dan pada masa yang sama meningkatkan kemahiran menggunakan teknologi digital.
+<br/><br/>
+**KEMUDAHAN ASAS**
+
+Indikator yang disediakan mengikut Parlimen bagi tahun 2019 dianggarkan berdasarkan kepada data Survei Pendapatan, Perbelanjaan Isi Rumah dan Kemudahan Asas (HIES/BA) 2019. Ralat piawaian relatif bagi Parlimen tertentu adalah tinggi dan perlu ditafsir dengan berhati-hati.
+<br/><br/>
+**PERTUBUHAN/ SYARIKAT PERNIAGAAN**
+
+**Industri**: Industri dikelaskan mengikut Piawaian Klasifikasi Industri Malaysia (MSIC) 2008 Versi 1.0 berasaskan kepada International Standard Industrial Classification of All Economic Activities (ISIC), Revision 4. 
+
+
