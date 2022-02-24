@@ -1,0 +1,37 @@
+/* Jeff's Edits */
+
+.storyboard-nav {
+    box-sizing: border-box;
+    width: 100% !important; /* This prevents JS transformation on width */
+    height: auto; /* This overrides the height */
+}
+
+.storyboard-nav .sbnext, .storyboard-nav .sbprev {
+    height: auto; /* This overrides the height */
+    font-size: 3rem;
+}
+
+.storyboard-nav .sbframelist {
+    height: auto; /* This overrides the height */
+}
+
+.storyboard-nav .sbframelist ul {
+    box-sizing: border-box;
+    width: 100% !important; /* This prevents JS transformation on width */
+    height: auto; /* This overrides the height */
+}
+
+.storyboard-nav .sbframelist ul li {
+    height: auto; /* This overrides the height */
+    width: auto; /* This overrides the width */
+}
+
+/* Ensure that the demo table scrolls */
+    th, td { white-space: nowrap; }
+    div.dataTables_wrapper {
+        margin: 0 auto;
+    }
+ 
+    div.container {
+        width: 80%;
+    }

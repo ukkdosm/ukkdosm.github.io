@@ -22,7 +22,7 @@ library(rmarkdown)
 setwd("C:/Users/najmi.ariffin/Documents/R/datatable")
 
 #render Rmd to html
-render("dt3_DUN_PARLIMEN.Rmd", "all")
+#render("dt3_DUN_PARLIMEN.Rmd", "all")
 
 ### Pulling most recent data from Github
 dataPAR <- read.csv("databasebyPAR.csv",fileEncoding = 'UTF-8-BOM')
