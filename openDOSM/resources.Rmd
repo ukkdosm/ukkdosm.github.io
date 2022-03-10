@@ -1,0 +1,88 @@
+---
+title: 'openDOSM : Beta v2.0'
+---
+```{r, include=FALSE}
+## This block just has comments to describe what's happening
+
+# You only need one hashtag/pound symbol, but I like using two
+# With Rmarkdown, you can mix R, Markdown, and HTML syntax
+# which is why we're using an R block for commenting this!
+
+## Anyway, because we're using the SearchBuilder option, it's nice
+## to know what options there are in the table, so we're just including a 
+## bulleted list below this block
+
+## You don't have to keep to 80 character columns, I just spend a lot of time
+## with Python and Terminals, so I like to keep to that
+```
+
+```{r, include=FALSE}
+## This code block loads in the packages we need to modify the CSV (tidyverse) 
+## and render the data table (DT)
+library(flexdashboard)
+library(DT)
+library(knitr)
+library(rmarkdown)
+library(tidyverse)
+library(googlesheets4)
+```
+
+```{r, echo=FALSE, message=FALSE}
+
+# Make googlesheets4 not try to authenticate, since we're using a public sheet
+gs4_deauth()
+
+# Create a function that reads the data from Google. I've seen other examples
+# that make this a reactive(), but I don't really know what that is since I
+# rarely use Shiny :shrug:
+#
+# I'm also not completely sold that this is the right approach, since this feels
+# kind of roundabout (create a function, run the function), but it doesn't work
+# if you just do remote_data <- read_sheet(). Also :shrug: for now.
+#
+# ALSO flexdashboard can use a special global chunk to speed up expensive data
+# loading (https://rmarkdown.rstudio.com/flexdashboard/shiny.html#loading_data)
+# which I assume also includes loading data remotely from Google, but if you
+# name this chunk global, the dynamic data loading stops working. Once again,
+# big :shrug:.
+load_remote_data <- function() {
+  read_sheet("1Wj7x8g0XbgXDPSYLoazdmqmD_Bat-5MqQelZ5GV2pFw", sheet = 'list_openDOSM')
+}
+
+data <- load_remote_data()
+
+## Make URLs a hyperlink
+## The target _blank portion forces the link to be opened in a new tab
+data$Download <- paste0("<a href=",data$Download,
+ ">",data$Download,"</a>")
+
+## Remove website column, since it's just something we needed internally
+## To update the shortlinks (this way we know where they point without
+## messing up our data analytics)
+data <- select(data, c("Title", "Description", "Indicator", "Download"))
+
+## Render the table with all the extensions and options we want
+## Examples of these options in R syntax are available on the DT site
+## https://rstudio.github.io/DT/
+## For general JavaScript DataTables options see https://datatables.net/
+datatable(data,
+    rownames=FALSE,
+    escape = FALSE,
+    extensions = c('Responsive', 'Buttons', 'SearchBuilder'), 
+    options = list(
+      dom = 'QBfrtip',
+      buttons = list(
+        'copy', 'csv', 'excel',
+        list(extend = 'pdf', 
+            orientation = 'landscape',
+            ## A3 paper: 29.7 x 42.0cm or 11.69 x 16.53 inches
+            exportoptions=list(pageSize='A3')
+            ),
+        'print')
+       )
+     )
+
+#render Rmd to html
+#setwd("C:/Users/najmi.ariffin/Documents/R/datatable")
+#render("resources.Rmd", "all")
+```
