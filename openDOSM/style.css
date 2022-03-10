@@ -1,0 +1,185 @@
+/* Adjust values from Cosmo https://bootswatch.com/4/cosmo/bootstrap.css */
+/* In CSS, comments look like this */
+/* You can even make them over
+multiple lines! */
+
+/* We want to use our purple color in the navbar */
+.navbar {
+  background-color: #65427D;
+  border-color: #65427D
+}
+
+/* Change font size for improved readability */
+
+/* Whole document: */
+body{
+  font-family: Helvetica;
+  font-size: 14pt;
+}
+/* Headers */
+h1,h2,h3,h4,h5,h6{
+  font-size: 18pt;
+}
+
+/* Change default colors from the Bootstrap for improved accessibility */
+
+/* unvisited link */
+a:link {
+  color: #0033FF;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #0033FF;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+}
+
+.list-group-item.active {
+  z-index: 2;
+  color: #fff;
+  background-color: #65427D;
+  border-color: #65427D;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #65427D;
+  border-color: #65427D;
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+  color: #fff;
+  background-color: #65427D;
+  border-color: #65427D;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  color: #fff;
+  text-decoration: none;
+  background-color: #65427D;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #65427D;
+}
+
+div.footer a:link, fab:link { color: #65427D;}
+
+/* Below this comment are dark mode settings!
+   Enable dark mode if it's the browser preference. */
+@media (prefers-color-scheme: dark) {
+a:link {
+  color: #CA9BE9;
+}
+
+div.footer a:link { color: #CA9BE9;}
+div.footer a:visted { color: #CA9BE9;}
+div.footer a:hover { color: #fff;}
+div.footer a:tab { color: #fff;}
+div.footer a:focus { color: #fff;}
+
+/* Force Twitter because it's pulling the blue */
+fab-twitter { color: #CA9BE9;}
+
+body {
+    background-color: #1F222A;
+    color: white;
+}
+
+.list-group-item.active, .list-group-item.active:hover,
+.list-group-item.active:focus {
+  background-color: #CA9BE9;
+  color: #1F222A;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #240C34;
+  border-color: #240C34;
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+  color: #fff;
+  background-color: #240C34;
+  border-color: #240C34;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  color: #fff;
+  text-decoration: none;
+  background-color: #240C34;
+}
+
+.dropdown-menu {
+  background-color: #1F222A;
+  color: #fff;
+}
+
+.dropdown-menu>li>a {
+    color: white;
+}
+
+.nav-pills .nav-link.active {
+  color: #fff;
+  background-color: #240C34;
+}
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: black;
+}
+.tocify-item {
+  color: #fff;
+  background-color: #1F222A;
+}
+.list-group-item-action:hover, .list-group-item-action:focus {
+  color: #fff;
+  background-color: #1F222A;
+}
+.list-group-item.active:active, .list-group-item.active:hover, .list-group-item.active:focus {
+  color: #1F222A;
+  background-color: white;
+}
+/* Start data tables */
+div.datatables {
+    color: white;
+    background-color: #1F222A;
+}
+
+.dataTables_wrapper {
+  color: white;
+  background-color: #1F222A;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+  color: white !important;
+}
+div.dtsb-group {
+  color: black;
+}
+table.dataTable.row-border tbody tr:first-child th, table.dataTable.row-border tbody tr:first-child td, table.dataTable.display tbody tr:first-child th, table.dataTable.display tbody tr:first-child td {
+    background-color: #211F29;
+}
+table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.dataTable.display tbody th, table.dataTable.display tbody td {
+  background-color: #211F29;
+}
+.dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_paginate {
+  color: white;
+}
+label {
+  color: white;
+}
+input{
+  color: black;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    color: white !important;
+}
+}
+
